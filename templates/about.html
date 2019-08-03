@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row h-100 justify-content-center align-items-center p-4">
+    <div class="cb col-md-5">
+        <main>
+            <article>
+                <header>
+                    <h1>About this website</h1>
+                    <time datetime="2019-8-03"></time>
+                </header>
+                <p>It is a small web application that uses python as a server, the flask library, the bootstrap toolkit
+                    and the firebase database service in order to schedule contacts.
+                </p><br><br>
+                <h5>Requirements</h5>
+                <li>flask</li>
+                <li>firebase-admind</li>
+                <br><br><br>
+                <h5>All code is found in the following repository</h5>
+                <p><a href="https://github.com/Silvak/python-web-app">https://github.com/Silvak/python-web-app/<a></a></p><br>
+                <p  >git user <a href="https://github.com/Silvak" class="text-secondary">Silvak</a></p>
+            </article>
+        </main>
+    </div>
+
+    <div class="col-sm-4  text-center ">
+        <img src="/static/img/about.jpg" class="img-fluid" alt="flag img programmer by Silvak">
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row h-100 justify-content-center align-items-center">
+
+    <div class="cb col-md-5 p-4">
+        <div class="container ">
+            <form action="/add" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="fullname" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="phone" placeholder="phone">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block ">Save</button>
+                </div>
+            </form>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-light alert-dismissible fade show rounded-0">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+
+
+    <div class="col-sm-7  text-center p-4">
+        <table class="table table-bordered bg-white table-sm ">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Phone</td>
+                    <td>Email</td>
+                    <td>Operations</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dic in contacts_html %}
+                <tr>
+                    <td>{{dic.name}}</td>
+                    <td>{{dic.phone}}</td>
+                    <td>{{dic.email}}</td>
+                    <td>
+                       <!-- <div class="btn-group" role="group" aria-label="Basic example">-->
+                            <a href="/edit/{{dic.name}}" class="btn btn-secondary shadow-none b1">Edit</a>
+                            <a href="/del/{{dic.name}}"
+                                class="btn btn-secondary shadow-none btn-delete b2">Supr</a>
+                         <!--</div>-->
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}

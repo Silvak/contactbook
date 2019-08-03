@@ -1,0 +1,13 @@
+a.b1{
+    background: #ABB2B9;
+    color: white;
+}
+
+button.btn, a.b2{
+    background: #396afc; 
+    color: white;
+}
+
+table, tr, td{
+    border: hidden;
+}
