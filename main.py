@@ -84,12 +84,10 @@ def get_contact(id):
 @app.route("/update/<id>", methods = ["POST"])
 def update_contact(id):
 
-    fullname = request.form["fullname"]
     phone = request.form["phone"]
     email = request.form["email"]
 
     data = {
-    #u'name': fullname, #error no es posible actualizar la id del documento firebase  
     u'phone': phone,
     u'email': email
     }
